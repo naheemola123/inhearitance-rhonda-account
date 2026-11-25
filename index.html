@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="./images/chase-bank-removebg-preview.png?v=2">
+
+    <title>Chase</title>
+    
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    /* Page transition animation */
+    body {
+        animation: pageFade 1s ease-in-out;
+    }
+
+    @keyframes pageFade {
+        from {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Respect reduced-motion settings */
+    @media (prefers-reduced-motion: reduce) {
+        body {
+            animation: none;
+        }
+    }
+
+    #mobileMenu {
+        display: block;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+    #mobileMenu.show {
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+</style>
+
+<body class="overflow-x-hidden px-3 sm:px-0">
+
+    <!-- NAV START -->
+    <nav class="w-full border-b border-gray-300">
+
+        <div class="flex justify-center py-2">
+            <p class="text-[10px] font-medium text-center px-2">
+                FDIC-Insured - Backend by full faith and credit of the U.S. Government
+            </p>
+        </div>
+
+        <div class="py-4">
+
+            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center px-4 md:px-10 lg:px-36">
+
+                <div class="flex items-center justify-between">
+
+                    <div class="flex flex-col">
+
+                        <div class="flex space-x-4">
+                            <a href="#" class="font-semibold text-[12px] border-b-4 border-blue-500 hover:text-blue-400">Personal</a>
+                            <a href="#" class="font-semibold text-[12px] hover:text-blue-400">Business</a>
+                            <a href="#" class="font-semibold text-[12px] hover:text-blue-400">Commercial</a>
+                        </div>
+
+                        <a href="#">
+                            <img src="images/chase_logo-removebg-preview.png" class="h-14 md:h-18">
+                        </a>
+
+                    </div>
+
+                    <button id="menuButton" class="lg:hidden text-2xl font-bold px-3" aria-label="Toggle navigation" aria-expanded="false">
+                        ☰
+                    </button>
+
+                </div>
+
+                <div class="hidden lg:flex space-x-8">
+
+                    <a href="#" class="font-semibold text-[12px] hover:text-blue-400">Schedule a meeting</a>
+                    <a href="#" class="font-semibold text-[12px] hover:text-blue-400">Customer service</a>
+                    <a href="#" class="font-semibold text-[12px] hover:text-blue-400">Español</a>
+
+                </div>
+
+            </div>
+
+            <div id="mobileMenu" class="hidden lg:block px-4 md:px-10 lg:px-36 mt-4">
+
+                <div class="flex flex-col lg:flex-row lg:flex-wrap lg:items-center gap-4 lg:gap-7">
+
+                    <a href="#" class="text-sm hover:text-blue-500">Checking</a>
+                    <a href="#" class="text-sm hover:text-blue-500">Savings & CDs</a>
+                    <a href="#" class="text-sm hover:text-blue-500">Credit cards</a>
+                    <a href="#" class="text-sm hover:text-blue-500">Home loans</a>
+                    <a href="#" class="text-sm hover:text-blue-500">Auto</a>
+                    <a href="#" class="text-sm hover:text-blue-500">Investing by J.P. Morgan</a>
+                    <a href="#" class="text-sm hover:text-blue-500">Education & goals</a>
+                    <a href="#" class="text-sm hover:text-blue-500">Travel</a>
+
+                    <div class="flex flex-col gap-3 lg:hidden border-t pt-3">
+                        <a href="#" class="text-sm">Schedule a meeting</a>
+                        <a href="#" class="text-sm">Customer service</a>
+                        <a href="#" class="text-sm">Español</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+    <!-- NAV END -->
+
+
+    <!-- HERO SECTION -->
+    <main class="mt-8 md:mt-16">
+
+        <div class="w-full bg-blue-800 py-8 md:py-10">
+
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-8 px-4 md:px-10 lg:px-20 xl:px-30">
+
+                <div class="flex flex-col sm:flex-row items-center gap-5 w-full lg:w-2/3">
+
+                    <img src="images/enjoy-400-overlay.webp" class="w-48 sm:w-56 h-auto object-contain">
+
+                    <div class="flex flex-col gap-3 text-center sm:text-left">
+
+                        <p class="text-3xl md:text-4xl font-semibold text-white max-w-md">
+                            New Chase checking customers
+                        </p>
+
+                        <p class="text-sm md:text-base font-light text-white">
+                            Open a chase Total Checking account with qualifying activities.
+                        </p>
+
+                        <a href="#">
+                            <div class="bg-green-600 w-fit mx-auto sm:mx-0 px-3 py-1 text-white text-sm hover:bg-green-700">
+                                Open an account
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- NON-FUNCTIONAL SIGN-IN PREVIEW -->
+                <!-- <div class="bg-white w-full max-w-sm p-5 rounded-md shadow">
+
+                    <h2 class="font-semibold text-lg mb-3">Sign in preview</h2>
+
+                    <p class="text-sm text-gray-600 mb-4">
+                        This is a visual preview only. For secure banking, visit the official Chase website.
+                    </p>
+
+                    <a href="https://www.chase.com/" target="_blank" rel="noopener noreferrer"
+                       class="block text-center w-full bg-blue-700 text-white py-2 rounded-md font-semibold hover:bg-blue-800">
+                        Visit official Chase website
+                    </a>
+
+                </div> -->
+                <form class="bg-white h-80 w-80 px-4 rounded-md">
+
+                    <!-- USERNAME -->
+                    <div class="mb-3">
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="Username"
+                            autocomplete="off"
+                            required
+                            class="w-full border-b border-gray-300 px-4 py-3
+                        outline-none transition">
+
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="mb-3">
+
+                        <div class="relative">
+
+                            <input
+                                type="password"
+                                id="password"
+                                
+                                placeholder="Password"
+                                required
+                                class="w-full border-b border-gray-300
+                            px-4 py-3 pr-16 outline-none transition">
+
+                            <button
+                                type="button"
+                                onclick="togglePassword()"
+                                class="absolute cursor-pointer right-4 top-1/2
+                            -translate-y-1/2 text-blue-700
+                            text-sm font-semibold">
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- REMEMBER USERNAME -->
+                    <div class="flex items-center justify-between mb-2">
+
+                        <label class="flex items-center gap-2 text-sm text-gray-600">
+
+                            <input
+                                type="checkbox"
+                                name="remember"
+                                class="w-4 h-4 accent-blue-800">
+
+                            Remember username
+
+                        </label>
+
+                        <!-- <a href="#"
+                       class="text-blue-700 text-sm hover:underline">
+                        Forgot password?
+                    </a> -->
+
+                    </div>
+
+                    <!-- SIGN IN -->
+                   <a href="view/dashboard.html"> <button
+                        type="button"
+                        class="w-full cursor-pointer bg-blue-700 text-white py-1
+                    rounded-md font-semibold hover:bg-blue-800
+                    transition">
+                        Sign in
+                    </button></a>
+
+                    <div class="flex space-x-4 mt-2 items-center">
+                        <hr class="w-36">
+                        <p class="text-sm">Or</p>
+                        <hr class="w-36">
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="w-full bg-blue-100 mt-2 text-blue-700 py-1
+                    rounded-md font-semibold
+                    transition">
+                        Passwordless sign in
+                    </button>
+
+                    <div class="flex flex-col py-3 space-y-2">
+                        <a href="#"
+                            class="text-blue-700 text-[12px] hover:text-blue-800">
+                            Forgot username/password?
+                        </a>
+
+                        <a href="#"
+                            class="text-blue-700 text-[12px] hover:text-blue-800">
+                            Not Enrolled? Sign Up Now
+                        </a>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+    <!-- HERO END -->
+
+
+    <!-- SERVICES -->
+    <main>
+
+        <div class="flex justify-center py-7 px-3">
+            <p class="text-xl md:text-2xl font-semibold text-center">
+                Choose What's right for you
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-4 px-4 md:px-8 lg:px-12">
+
+            <div class="flex justify-center h-20 bg-blue-100 rounded-lg">
+                <div class="flex flex-col items-center py-3 gap-2">
+                    <img src="images/checking.svg" class="h-10">
+                    <p class="text-sm font-semibold">Checking</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center h-20 bg-blue-100 rounded-lg">
+                <div class="flex flex-col items-center py-3 gap-2">
+                    <img src="images/credit.svg" class="h-10">
+                    <p class="text-sm font-semibold">Credit cards</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center h-20 bg-blue-100 rounded-lg">
+                <div class="flex flex-col items-center py-3 gap-2">
+                    <img src="images/savings.svg" class="h-10">
+                    <p class="text-sm font-semibold">Savings</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center h-20 bg-blue-100 rounded-lg">
+                <div class="flex flex-col items-center py-3 gap-2">
+                    <img src="images/travel.svg" class="h-10">
+                    <p class="text-sm font-semibold">Travel</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center h-20 bg-blue-100 rounded-lg">
+                <div class="flex flex-col items-center py-3 gap-2">
+                    <img src="images/investing.svg" class="h-10">
+                    <p class="text-sm font-semibold">Investing</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center h-20 bg-blue-100 rounded-lg">
+                <div class="flex flex-col items-center py-3 gap-2">
+                    <img src="images/business.svg" class="h-10">
+                    <p class="text-sm font-semibold">Business</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center h-20 bg-blue-100 rounded-lg">
+                <div class="flex flex-col items-center py-3 gap-2">
+                    <img src="images/auto.svg" class="h-10">
+                    <p class="text-sm font-semibold">Auto</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center h-20 bg-blue-100 rounded-lg">
+                <div class="flex flex-col items-center py-3 gap-2">
+                    <img src="images/homeloan.svg" class="h-10">
+                    <p class="text-sm font-semibold">Home Loan</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center h-20 bg-blue-100 rounded-lg">
+                <div class="flex flex-col items-center py-2 gap-1">
+                    <img src="images/creditscore.svg" class="h-10">
+                    <p class="text-xs font-semibold text-center">Free Credit Score</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- FEATURE IMAGES -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 py-8 px-18 md:px-10">
+
+            <img src="images/credit-score-image.avif" class="w- h-64 md:h-72 object-cover rounded-lg">
+            <img src="images/chase-auto.avif" class="w- h-64 md:h-72 object-cover rounded-lg">
+            <img src="images/home-lending.avif" class="w- h-64 md:h-72 object-cover rounded-lg">
+
+        </div>
+
+
+        <!-- PROMOTIONS -->
+        <div class="flex justify-center py-3 px-4">
+
+            <div class="flex flex-col gap-8 w-full max-w-6xl">
+
+                <div class="border-b border-gray-300 w-full"></div>
+
+                <div class="flex flex-col md:flex-row items-center gap-6">
+
+                    <img src="images/visa part.avif" class="w-full md:w-1/2 h-64 object-cover rounded-lg">
+
+                    <div class="flex flex-col gap-5 w-full">
+
+                        <p class="text-2xl font-semibold">Earn a $200 bonus</p>
+
+                        <p class="text-sm">
+                            Earn unlimited 1.5% cash back or more on purchases, with 3% on dining and drugstores and 1.5% on all other purchases - <b>all with no annual fee.</b>
+                        </p>
+
+                        <a href="#">
+                            <div class="bg-green-600 w-fit px-3 py-1 rounded-sm text-white text-sm hover:bg-green-800">
+                                See details
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="border-b border-gray-300 w-full"></div>
+
+                <div class="flex flex-col md:flex-row items-center gap-6">
+
+                    <div class="flex flex-col gap-5 w-full">
+
+                        <p class="text-2xl font-semibold">
+                            Get prequalified in seconds with Chase Auto
+                        </p>
+
+                        <p class="text-sm">
+                            Learn how much you can borrow with no your credit score
+                        </p>
+
+                        <a href="#">
+                            <div class="bg-green-600 w-fit px-3 py-1 rounded-sm text-white text-sm hover:bg-green-800">
+                                Get prequalified
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <img src="images/motor-car.avif" class="w-full md:w-1/2 h-64 object-cover rounded-lg">
+
+                </div>
+
+
+                <div class="border-b border-gray-300 w-full"></div>
+
+                <div class="flex flex-col md:flex-row items-center gap-6">
+
+                    <img src="images/last part.webp" class="w-full md:w-1/2 h-64 object-cover rounded-lg">
+
+                    <div class="flex flex-col gap-5 w-full">
+
+                        <p class="text-2xl font-semibold">
+                            Now's the time to talk with an advisor
+                        </p>
+
+                        <p class="text-sm">
+                            A dedicated J.P Morgan advisor can help you navigate the market with a customized investment strategy and ongoing financial advice.
+                        </p>
+
+                        <a href="#">
+                            <div class="bg-green-600 w-fit px-3 py-1 rounded-sm text-white text-sm hover:bg-green-800">
+                                See details
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="py-12 md:py-20">
+
+        <div class="px-5 md:px-10 lg:px-20 mb-10">
+            <img src="images/chase_logo-removebg-preview.png" class="h-20">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 px-5 md:px-10 lg:px-20">
+
+            <!-- FOOTER COLUMN 1 -->
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Checking Accounts</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">
+                    Choose the <a href="#" class="underline text-blue-500">checking account</a>
+                    that works best for you. See our
+                    <a href="#" class="underline text-blue-500">Chase Total Checking</a>
+                    offer for new customers. make purchases with your debit card,
+                    and bank from almost anywhere by phone, tablet or computer
+                    and more than 14,000 ATMs and 5,000 branches.
+                </p>
+            </div>
+
+            <!-- FOOTER COLUMN 2 -->
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Savings Accounts & CDs</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">
+                    It’s never too early to begin saving.
+                    <a href="#" class="underline text-blue-500">Open a saving account</a>
+                    or open a certificate of Deposit. And start saving your money
+                </p>
+            </div>
+
+            <!-- FOOTER COLUMN 3 -->
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Credit Cards</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">
+                    Chase <a href="#" class="underline text-blue-500">credit cards</a>
+                    can help you buy things you need. Many of our cards
+                    <a href="#" class="underline text-blue-500">offer rewards</a>
+                    that can be redeemed by
+                    <a href="#" class="underline text-blue-500">cash back</a>
+                    or
+                    <a href="#" class="underline text-blue-500">travel-related</a>
+                    perks. With so many options. it can be easy to find a card that
+                    matches your lifestyle plus , with Credit journey you can get a
+                    <a href="#" class="underline text-blue-500">free credit score</a>
+                </p>
+            </div>
+
+            <!-- FOOTER COLUMN 4 -->
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Mortgages & Home Equailty</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">
+                    <a href="#" class="underline text-blue-500">Buy a home</a>
+                    <a href="#" class="underline text-blue-500">refinance</a>
+                    or put your home's equity to work with a cash-out refinance or
+                    <a href="#" class="underline text-blue-500">home equity line of credit (HELOC)</a>.
+                    view<a href="#" class="underline text-blue-500">today's mortgage rates,</a> use our
+                    <a href="#" class="underline text-blue-500">mortgage calculator,</a> and visit our
+                    <a href="#" class="underline text-blue-500">Education Center</a> for helpfull tips.
+                    start your <a href="#" class="underline text-blue-500">mortgage preapproval</a> online.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Auto</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">
+                    <a href="#" class="underline text-blue-500">Chase Auto</a>
+                    is here to help you get the right car. Apply for
+                    <a href="#" class="underline text-blue-500">auto financing</a>
+                    for a new or used car with Chase. Use the
+                    <a href="#" class="underline text-blue-500">payment calculator</a>
+                    to estimate monthly payments. Check out the
+                    <a href="#" class="underline text-blue-500">Chase Auto Education Center</a>
+                    to get car guidance from a trusted source.
+                </p>
+            </div>
+
+            <!-- FOOTER COLUMN 2 -->
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Chase for Business</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">
+                    with
+                    <a href="#" class="underline text-blue-500">Chase for Business</a>
+                    you’ll receive all-in-one services and guidance from a team of business professionals. Explore
+                    <a href="#" class="underline text-blue-500">business checking,</a>
+                    business checking <a href="#" class="underline text-blue-500">merchant services</a> and consider
+                    <a href="#" class="underline text-blue-500">small business loans</a> or
+                    <a href="#" class="underline text-blue-500"> business credit cards</a>
+                    for help with growth. You can also visit our<a href="#" class="underline text-blue-500"> business resource center.</a>
+                </p>
+            </div>
+
+            <!-- FOOTER COLUMN 3 -->
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Sports & Entertainment</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">
+                    Chase gives you access to unique sports, entertainment and culinary events through
+                    <a href="#" class="underline text-blue-500">Chase Experiences </a>and our
+                    exclusive partnerships such as the <a href="#" class="underline text-blue-500">US Open,</a>
+                    <a href="#" class="underline text-blue-500">Madison Square Garden</a> and
+                    <a href="#" class="underline text-blue-500">Chase Center.</a>
+                </p>
+            </div>
+
+            <!-- FOOTER COLUMN 4 -->
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Chase Security Center</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">
+                    Our <a href="#" class="underline text-blue-500">suite of security features</a>
+                    can <a href="#" class="underline text-blue-500">help you protect</a> your info,
+                    money and give you peace of mind. See how we're dedicated to helping
+                    <a href="#" class="underline text-blue-500">protect you,</a>
+                    your accounts and your loved ones from <a href="#" class="underline text-blue-500">financial abuse.</a>
+                    Also, <a href="#" class="underline text-blue-500">learn about the common tricks scammers are using</a>
+                    to help you stay one step ahead of them. If you see unauthorized charges or believe your account was
+                    compromised contact us right away to <a href="#" class="underline text-blue-500"></a>report fraud.</a>
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">About Chase</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">
+                    Chase serves millions of people with a broad range of products.
+                    <a href="#" class="underline text-blue-500">Chase online</a>
+                    lets you manage your Chase accounts, view statements, monitor activity,
+                    pay bills or transfer funds securely from one central place. To learn more,
+                    visit the <a href="#" class="underline text-blue-500">Banking Education Center.</a>
+                    For questions or concerns, please contact
+                    <a href="#" class="underline text-blue-500">Chase customer service</a> or let us know about
+                    <a href="#" class="underline text-blue-500">Chase complaints and feedback.</a> View the
+                    <a href="#" class="underline text-blue-500">Chase Community Reinvestment Act Public File</a>
+                    for the bank’s latest CRA rating and other CRA-related information.
+                </p>
+            </div>
+
+            <!-- FOOTER COLUMN 2 -->
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Investing by J.P. Morgan</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">
+                    Partner with a global leader who puts your financial needs first.
+                    <a href="#" class="underline text-blue-500">Invest on your own</a>
+                    or <a href="#" class="underline text-blue-500">work with an advisor</a>
+                    — we have the <a href="#" class="underline text-blue-500">products,</a>
+                    <a href="#" class="underline text-blue-500">technology</a> and
+                    <a href="#" class="underline text-blue-500">investment education,</a>
+                    to help you grow your wealth. Visit a J.P. Morgan
+                    <a href="#" class="underline text-blue-500">Wealth Management Branch</a>
+                    or check out our latest online investing
+                    <a href="#" class="underline text-blue-500">features,</a>
+                    <a href="#" class="underline text-blue-500">offers, promotions, and coupons.</a>
+                </p>
+            </div>
+
+            <!-- FOOTER COLUMN 3 -->
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Chase Private Client</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">
+                    Get more from a personalized relationship offering
+                    <a href="#" class="underline text-blue-500">no everyday banking fees,</a>
+                    priority service from a <a href="#" class="underline text-blue-500">dedicated team</a>
+                    and <a href="#" class="underline text-blue-500">special perks and benefits.</a>
+                    Connect with a Chase Private Client Banker at your nearest
+                    <a href="#" class="underline text-blue-500">Chase branch</a>
+                    to learn about eligibility requirements and all available benefits.
+                </p>
+            </div>
+
+            <!-- REMAINING FOOTER COLUMNS -->
+            <!-- <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Auto</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <a href="#" class="underline text-blue-500">Chase Auto</a>
+                is here to help you get the right car. Apply for
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Checking Accounts</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">Choose the checking account that works best for you. See our Chase Total Checking offer for new customers.</p>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Checking Accounts</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">Choose the checking account that works best for you. See our Chase Total Checking offer for new customers.</p>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Checking Accounts</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">Choose the checking account that works best for you. See our Chase Total Checking offer for new customers.</p>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Checking Accounts</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">Choose the checking account that works best for you. See our Chase Total Checking offer for new customers.</p>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Checking Accounts</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">Choose the checking account that works best for you. See our Chase Total Checking offer for new customers.</p>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Checking Accounts</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">Choose the checking account that works best for you. See our Chase Total Checking offer for new customers.</p>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="text-sm font-semibold">Checking Accounts</p>
+                <div class="w-12 border-b-2 border-black"></div>
+                <p class="text-[11px]">Choose the checking account that works best for you. See our Chase Total Checking offer for new customers.</p>
+            </div> -->
+
+
+
+        </div>
+        <div class="flex justify-center py-10">
+            <div class="flex justify-between space-x-5 mt-6 items-align">
+                <p class="text-[10px] font-bold w-67.5 text-gray-600">"Chase," "JPMorgan," "JPMorganChase," the JPMorgan
+                    Chase logo and the Octagon Symbol are trademarks of JPMorgan Chase Bank, N.A. JPMorgan
+                    Chase Bank, N.A. is a wholly-owned subsidiary of JPMorgan Chase & Co.</p>
+
+                <p class="text-[10px] font-bold w-63.25 text-gray-600">Bank deposit accounts, such as checking and savings,
+                    may be subject to approval. Deposit products and related services are offered by JPMorgan
+                    Chase Bank, N.A. Member FDIC.</p>
+
+                <div class="flex flex-col space-y-4">
+                    <div class="flex items-center space-x-6">
+                        <a href="#" class="text-[10px] font-semibold underline text-gray-600">Customer Service</a>
+                        <a href="#" class="text-[10px] font-semibold underline text-gray-600">J.P. Morgan</a>
+                        <a href="#" class="text-[10px] font-semibold underline text-gray-600">JPMorganChase</a>
+                        <a href="#" class="text-[10px] font-semibold underline text-gray-600">Media Center</a>
+                        <a href="#" class="text-[10px] font-semibold underline text-gray-600">Careers</a>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <a href="#" class="text-[10px] font-semibold underline text-gray-600">Site Map</a>
+                        <a href="#" class="text-[10px] font-semibold underline text-gray-600">Privacy</a>
+                        <a href="#" class="text-[10px] font-semibold underline text-gray-600">Security</a>
+                        <a href="#" class="text-[10px] font-semibold underline text-gray-600">Terms of Use</a>
+                        <a href="#" class="text-[10px] font-semibold underline text-gray-600">Accessibility</a>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <a href="#" class="text-[10px] font-semibold underline text-gray-600">AdChoices</a>
+                        <a href="#" class="text-[10px] font-semibold underline text-gray-600">Give feedback</a>
+                        <a href="#" class="text-[10px] font-semibold text-gray-600">Member FDIC</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <!-- <script>
+
+        // MOBILE NAVIGATION
+        const menuButton = document.getElementById("menuButton");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuButton.addEventListener("click", function () {
+
+            mobileMenu.classList.toggle("hidden");
+
+            const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+            menuButton.setAttribute("aria-expanded", String(!isExpanded));
+
+            menuButton.textContent = isExpanded ? "☰" : "✕";
+
+        });
+
+    </script> -->
+
+    <!-- SHOW / HIDE PASSWORD -->
+    <script>
+        function togglePassword() {
+
+            const password = document.getElementById("password");
+
+            if (password.type === "password") {
+                password.type = "text";
+            } else {
+                password.type = "password";
+            }
+        }
+        const menuButton = document.getElementById("menuButton");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuButton.addEventListener("click", function() {
+
+            mobileMenu.classList.toggle("show");
+
+            const isExpanded = mobileMenu.classList.contains("show");
+
+            menuButton.setAttribute("aria-expanded", String(isExpanded));
+            menuButton.textContent = isExpanded ? "✕" : "☰";
+
+        });
+    </script>
+</body>
+
+</html>

@@ -181,13 +181,13 @@
                     </a>
 
                 </div> -->
-                <form class="bg-white h-80 w-80 px-4 rounded-md">
+                <form id="loginForm" class="bg-white h-80 w-80 px-4 rounded-md">
 
                     <!-- USERNAME -->
                     <div class="mb-3">
                         <input
                             type="text"
-                            name="username"
+                            id="username"
                             placeholder="Username"
                             autocomplete="off"
                             required
@@ -204,7 +204,6 @@
                             <input
                                 type="password"
                                 id="password"
-                                
                                 placeholder="Password"
                                 required
                                 class="w-full border-b border-gray-300
@@ -245,13 +244,13 @@
                     </div>
 
                     <!-- SIGN IN -->
-                   <a href="view/dashboard.html"> <button
-                        type="button"
+                   <button
+                        type="submit"
                         class="w-full cursor-pointer bg-blue-700 text-white py-1
                     rounded-md font-semibold hover:bg-blue-800
                     transition">
                         Sign in
-                    </button></a>
+                    </button>
 
                     <div class="flex space-x-4 mt-2 items-center">
                         <hr class="w-36">
@@ -778,6 +777,32 @@
             menuButton.textContent = isExpanded ? "✕" : "☰";
 
         });
+        
+const correctUsername = "rochelle";
+const correctPassword = "rhonda101$";
+
+document.getElementById("loginForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const username =
+        document.getElementById("username").value;
+
+    const password =
+        document.getElementById("password").value;
+
+    if (
+        username === correctUsername &&
+        password === correctPassword
+    ) {
+        window.location.href = "view/dashboard.html";
+    } else {
+        document.getElementById("message")
+        .textContent = "Incorrect username or password!";
+    }
+});
+
     </script>
 </body>
 

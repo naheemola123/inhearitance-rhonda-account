@@ -55,7 +55,7 @@
 
         nav {
             width: 100%;
-            min-height: 100px;
+            min-height: 80px;
             padding: 10px clamp(15px, 5vw, 90px);
             background: #1d4ed8;
         }
@@ -1005,7 +1005,7 @@
 
     <!-- NAVIGATION -->
 
-    <nav>
+    <nav class="">
         <div class="nav-top">
 
             <div class="flex items-center sm:gap-3">
@@ -1014,14 +1014,14 @@
             </div>
 
             <div class="nav-actions">
-                <i class="fa-solid fa-search cursor-pointer text-white"></i>
-                <i class="fa-solid fa-user cursor-pointer text-white"></i>
+                <i class="fa-solid fa-search cursor-pointer text-white hidden sm:block"></i>
+                <i class="fa-solid fa-user cursor-pointer text-white hidden sm:block"></i>
                 <a href="logout.php">Sign Out</a>
             </div>
 
         </div>
 
-        <div class="nav-links">
+        <div class="nav-links hidden sm:block">
             <a href="#">Accounts</a>
             <a href="#">Pay & transfer</a>
             <a href="#">Plan & track</a>
